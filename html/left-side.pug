@@ -1,0 +1,41 @@
+extends ./index.pug
+block change_sides
+    - const classes = "left"
+block content_page
+    - const side = false;
+    .sides(class = `${classes}`)
+        block no_side
+            .txt-side
+                .box
+                    h3.title-menu
+                        span RECENT POSTS
+                    ul
+                        - for(let i = 0 ;i< 3;i++)
+                            +list(links[i],time[i],numbers[i])
+                    button.gray archives
+                .box
+                    h3.title-menu
+                        span IPSUM DOLORE
+                    img(src="../images/pic01.jpg")
+                    p Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi. Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+                    button.gray learn MORE
+                .box
+                    h3.title-menu
+                        span MAGNA FEUGIAT
+                    p Rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien. Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi. Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+                    button.gray learn MORE
+        .img-side
+            box
+                +header-and-span("LEFT SIDEBAR","SEMPER AMET SCELERISQUE METUS FAUCIBUS MORBI CONGUE MATTIS")
+                .image  
+                    img(src="../images/banner.jpg")
+                p Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi consequat etiam lorem ipsum dolor sit amet nullam.
+            box
+                h4 MORE INTRIGUING INFORMATION
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis, ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor. Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor. Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien. Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi. Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
+                p Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu. Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna, fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium. Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien. Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi. Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu. Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.
+            box
+                h4 SO IN CONCLUSION ...
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis, ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor. Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien. Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi. Phasellus sed nisl vitae.
+                p Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna, fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium. Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu. Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.
+    +row-two(links)

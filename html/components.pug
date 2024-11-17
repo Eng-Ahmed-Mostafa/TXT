@@ -1,0 +1,28 @@
+mixin row-two(link)
+    .row-two
+        .section-title
+            h2 A MAJOR HEADING
+        .boxes
+            - for(let i = 0; i< 4;i++)
+                .box
+                    img(src= `../images/pic0${i + 1}.jpg`)
+                    .info 
+                        h3 #{link[i]} 
+                        p Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+        .buttons
+            button.green DO SOMETHING
+            button.gray THINK ABOUT IT
+mixin header-and-span(header,span)
+    .header-and-span
+        h2= header
+        span= span
+mixin time(time, number) 
+    span.time
+        <i class="fa-regular fa-clock"></i>
+        | #{time} 
+        <i class="fa-regular fa-comments"></i>
+        | #{number}
+mixin list(link,time,number)
+    li
+        a #{link}
+        +time(time,number)

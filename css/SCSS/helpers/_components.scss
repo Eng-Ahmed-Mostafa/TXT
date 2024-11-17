@@ -1,0 +1,194 @@
+@use "../varibale/varibale" as *;
+@use "../mixin/mixin" as *;
+.section-title {
+    position: relative;
+    text-align: center;
+    margin: {
+        top: 100px;
+        bottom: 100px
+    };
+    &::before {
+        @include beforeItem(50%,0,100%,3px);
+        background-color: $light_gray;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+    h2 {
+        position: relative;
+        background-color: white;
+        font-size: 24px;
+        font-weight: bold;
+        color: $dark_gray;
+        width: fit-content;
+        padding: 0px 15px;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        z-index: 1;
+    }
+}
+.row-two {
+    .boxes {
+        @include grad(200px,80px);
+        .box {
+            text-align: center;
+            img {
+                max-width: 100%;
+                border-radius: $border_radius;
+            }
+            .info {
+                margin-top: 20px;
+                h3 {
+                    color: $dark_gray;
+                }
+                p {
+                    color: $light_gray;
+                    line-height: 1.8;
+                    letter-spacing: 1.2px;                        margin-top: 20px;
+                }
+            }
+        }
+    }
+    .buttons {
+        margin-top: 80px;
+        @include flex_c(20px);
+    }
+}
+button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: $border_radius;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    &.green {
+        background-color: $green;
+        &:hover {
+            background-color: $light2_green;
+        }
+    }
+    &.gray {
+        background-color: $light_gray;
+        &:hover {
+            background-color: $light2_gray;
+        }
+    }
+}
+span.time {
+    margin-top: 15px;
+    margin-left: -5px;
+    font-size: 14px;
+    display: block;
+    color: $light_gray;
+    i {
+        color: $light2_gray;
+        margin: 0 5px;
+    }
+}
+.header-and-span {
+    h2 {
+        font-size: 40px;
+        color: $dark_gray;
+    }
+    span {
+        display: inline-block;
+        color: $light_gray;
+        font-size: 26px;
+        margin-top: 20px;
+        letter-spacing: 0px;
+        word-spacing: 1px;
+    }
+}
+.sides {
+    display: flex;
+    gap: 40px;
+    &.left {
+        flex-direction: row;
+    }
+    &.right {
+        flex-direction: row-reverse;
+    }
+    &.center {
+        text-align: center;
+        flex-direction: column-reverse;
+        .txt-side {
+            align-items: stretch !important;
+        }
+    }
+    justify-content: space-between;
+    @include media("small") {
+        flex-direction: column;
+    }
+    .img-side {
+        .box:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        flex: 5;
+        max-width: 100%;
+        .image {
+            max-width: 100%;
+            margin: 40px 0 20px;
+            img {
+                border-radius: $border_radius;
+                max-width: 100%;
+            }
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        @include media("small") {
+            button {
+                width: 100%;
+            }
+        }
+    }
+    .txt-side {
+        .box {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            img {
+                width: 100%;
+                border-radius: $border_radius;
+            }
+        }
+        flex: 2;
+        @include flex_w(start,space-between,column,80px);
+        @include media("small") {
+            align-items: stretch;
+        }
+        ul {
+            width: 100%;
+            margin-bottom: 30px;
+            li:not(:last-child) {
+                position: relative;
+                margin-bottom: 60px;
+                &::before {
+                    @include beforeItem(calc(100% + 30px),0,100%,1px);
+                    background-color: $light2_gray;
+                }
+            }
+        }
+    }
+}
+h3.title-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    color: $dark_gray;
+    &::before {
+        @include beforeItem(50%,0,100%,3px);
+        background-color: $light_gray;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+    span {
+        padding-right: 15px;
+        font-size: 22px;
+        background-color: white;
+    }
+}

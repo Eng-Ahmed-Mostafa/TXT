@@ -1,0 +1,49 @@
+single row
+    1.1 Handling null value
+        NVL(expr1 , expr2) => if expr1 equal null result is expr2
+        NVL2(expr1,expr2,expr3) => if expr1 not equal null result is expr2 else result is expr3
+        NullIf(expr1,expr2) => if expr1 equal expr2 result is null else result is expr1
+        coalesce(expr1,expr2,expr3,.....) => check expr1 not null if result is expr1 else go to expr2 ..... 
+    1.2 conditional expression 
+        Decode(column|expression,search1,result1,search2,result2,......)
+        case [column] when condition then result when condition then result ....
+    1.3 numbers function
+        mod(value1,value2) result is value1 % value2
+        round(value,number) result is value to float number with near
+        trunc(value,number)  result is value to float number with cut
+    1.4 function Date
+        sysDate => return date for this day
+        months_between(date1,date2) => return number months between date1 and date2
+        add_month(date,number months) => return date after add number months to basic Date
+        next_day(date, day from week) => return date for day from week from basic date
+        last_day(date.day from week) => return date for day is last day from month
+        round(sysDate,"month"|"year") => return nearly date
+        trunc(sysDate,"month"|"year") => return first date in (month | year) 
+    1.5 character function
+        upper(expr)
+        lower(expr)
+        initcap(expr) => first letter captel
+        length(expr) => return number letters in expr
+        concat(expr1,expr2) => concatenation between expr1 and expr2
+        substr(expr,first,number letters) => cut from first to number letters
+        instr(expr1, expr2) => return first position to expr2 form expr1
+        replace(expr1,expr2,expr3) => return expr1 with change all expr2 by expr3  
+        trim(expr2(one letter) from expr1) => delete expr2 from start and end expr1
+        trim(both expr2(one letter) from expr1) => delete expr2 from start and end expr1
+        trim(leading expr2(one letter) from expr1) => delete expr2 from start expr1
+        trim(trailing expr2(one letter) from expr1) => delete expr2 from start expr1
+        lpad(expr,number,character) => create space by character from left
+        rpad(expr,number,character) => create space by character from right
+    1.6 conversion
+        to_char(expr,format"$6666.55") => change from number to character
+        to_number(expr,format)
+        to_date(expr,format)
+multiple rows(aggregate|group) => ignore null values
+    count(col)
+    sum(col)
+    avg(col)
+    min(col) => return number | date | character
+    max(col) => return number | date | character
+    stddev(col)
+    variance(col)
+    distinct(col) => unique values

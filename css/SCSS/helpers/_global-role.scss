@@ -1,0 +1,30 @@
+@use "../varibale/varibale" as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: $dark_gray;
+}
+p {
+    color: $dark_gray;
+    margin: 20px 0;
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+}
+h4 {
+    margin-top: 40px;
+    font-size: 20px;
+    color: $dark_gray;
+}

@@ -1,0 +1,55 @@
+@mixin beforeItem($top,$left,$width,$height) {
+    content: "";
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+}
+@mixin position($position,$top,$left,$width,$height){
+    position: $position;
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+}
+@mixin flex_c($gap) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+@mixin flex_w($align,$justify,$dir,$gap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $dir;
+    gap: $gap;
+}
+@mixin media($media) {
+    @if($media == "phone") {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if($media == "small") {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }
+    @else if($media == "medium") {
+        @media (max-width: 1199px) {
+            @content;
+        }
+    }
+    @else if($media == "large") {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+}
+@mixin grad($min,$gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax($min,1fr));
+    gap: $gap;
+}

@@ -1,0 +1,110 @@
+doctype
+html
+    head
+        link(rel="stylesheet" href="../css/all.min.css")
+        link(rel="stylesheet" href="../css/normaliz.css")
+        link(rel="stylesheet" href="../css/main.css")
+    body
+        include ./varibles.pug
+        include ./components.pug
+        .header
+            .bars 
+                i(class="fa-solid fa-bars")
+            span txt
+            .container
+                ul#menu
+                    li.active
+                        a(href="./index.html") home
+                    li
+                        a(href="#") dropdown
+                        ul
+                            li
+                                a(href="#") lorem ipsum dolor
+                            li
+                                a(href="#") magna phasellus
+                                ul
+                                    li
+                                        a(href="#") lorem ipsum dolor
+                                    li
+                                        a(href="#") phasellus conequat
+                                    li
+                                        a(href="#") magna phasellus
+                                    li
+                                        a(href="#") etiam dolore nisl
+                            li
+                                a(href="#") phasellus conequat
+                            li
+                                a(href="#") etiam dolore nisl
+                    li
+                        a(href="./left-side.html") 
+                            span left sidebar
+                    li
+                        a(href="./right-side.html") 
+                            span right sidebar
+                    li
+                        a(href="./center-side.html") 
+                            span no sidebar
+        .page-title
+            .container
+                h1 
+                    span TXT
+                    |  A RESPONSIVE SITE TEMPLATE BY HTML5 UP
+        .landing
+            .parent-container
+                .container
+                    h2 WELCOME TO TXT BY HTML5 UP
+                    span A FREE RESPONSIVE SITE TEMPLATE BUILT ON HTML5, CSS3, AND SOME OTHER STUFF
+                    a(href="#main") ALRIGHT LET'S GO
+        .main#main
+            .container
+                block change_sides
+                    - const classes = "left";
+                block content_page
+                    .row-one
+                        .box 
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-tablet-screen-button"></i>
+                            <i class="fa-solid fa-flask"></i>
+                            <i class="fa-solid fa-gear"></i>
+                        .info
+                            h2 A RANDOM ASSORTMENT OF ICONS IN CIRCLES
+                            span AND SOME TEXT THAT ATTEMPTS TO EXPLAIN THEIR SIGNIFICANCE
+                            p Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
+                    +row-two(links)
+                    .row-three 
+                        .section-title
+                            h2 ANOTHER MAJOR HEADING
+                        div(class = `${classes} sides`)
+                            .img-side
+                                +header-and-span("HERE'S A REALLY BIG HEADING","WITH A SMALLER SUBTITLE THAT ATTEMPTS TO ELABORATE")
+                                +time("15 minutes ago","8")
+                                .image
+                                    img(src="/images/pic05.jpg")
+                                p Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum dolor sit non aliquet sed, tempor et dolor. Praesent a dapibus velit. Curabitur accumsan.
+                                button.green continue reading
+                            .txt-side 
+                                ul
+                                    - for(let i = 0; i< 5;i++) 
+                                        +list(links[i],time[i],numbers[i])
+                                button.gray archives
+        .footer
+            .container
+                .section-title
+                    h2 WHAT'S THIS ABOUT?
+                p This is <strong>TXT</strong>, yet another free responsive site template designed by AJ for <a>HTML5 UP</a>. It's released under the <a>Creative Commons Attribution</a> license so feel free to use it for whatever you're working on (personal or commercial), just be sure to give us credit for the design. That's basically it :)
+                .section-title
+                    h2 GET IN TOUCH
+                ul 
+                    li.facebook 
+                        a(href="#") <i class="fa-brands fa-facebook-f"></i>
+                    li.twitter
+                        a(href="#") <i class="fa-brands fa-twitter"></i>
+                    li.instagram
+                        a(href="#") <i class="fa-brands fa-instagram"></i>
+                    li.wordpress
+                        a(href="#") <i class="fa-brands fa-wordpress"></i>
+                    li.linked-in
+                        a(href="#") <i class="fa-brands fa-linkedin-in"></i>
+                span.copy-right © Untitled. All rights reserved | Design: 
+                    a(href="#") HTML5 UP
+        script(src="../js/main.js")
